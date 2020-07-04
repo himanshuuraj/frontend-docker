@@ -6,7 +6,7 @@ before_install:
   - docker build -t hraj3116/frontend -f Dockerfile.dev .
 
 script:
-  - docker run hraj3116/frontend npm run test -- --coverage
+  - docker run -e CI=true hraj3116/frontend npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk

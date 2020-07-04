@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t hraj3116/frontend -f Dockerfile.dev .
+
+script:
+  - docker run hraj3116/frontend npm run test -- --coverage
